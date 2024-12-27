@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+html lang="vi">
+head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Blog cá nhân - Lập trình Java</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   <style>
+       body {
+           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+           line-height: 1.6;
+           color: #333;
+           background-color: #f8f9fa;
+       }
+        header {
+           background: #2c3e50;
+           color: #fff;
+           padding: 1rem 0;
+           position: fixed;
+           width: 100%;
+           top: 0;
+           z-index: 1000;
+           box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+       }
+        nav ul {
+           list-style: none;
+           padding: 0;
+           display: flex;
+           justify-content: center;
+           margin: 0;
+       }
+        nav ul li {
+           margin: 0 20px;
+       }
+        .nav-link {
+           color: #fff !important;
+           text-decoration: none;
+           font-weight: 500;
+           position: relative;
+           padding: 5px 0;
+           font-size: 1.1em;
+       }
+        .nav-link::after {
+           content: '';
+           position: absolute;
+           width: 100%;
+           height: 2px;
+           bottom: 0;
+           left: 0;
+           background-color: #3498db;
+           transform: scaleX(0);
+           transition: transform 0.3s ease-in-out;
+       }
+        .nav-link:hover::after,
+       .nav-link.active::after {
+           transform: scaleX(1);
+       }
+        .section {
+           display: none;
+           opacity: 0;
+           transition: opacity 0.5s ease-in-out;
+           padding-top: 80px;
+       }
+        .section.active {
+           display: block;
+           opacity: 1;
+       }
+        #home {
+           background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                       url('https://static.topcv.vn/cms/front%20end%20developer%2000612f8b56c7d35.jpg') no-repeat center center;
+           background-size: cover;
+           color: white;
+           min-height: 100vh;
+           display: flex;
+           align-items: center;
+           text-align: center;
+       }
+        .card {
+           transition: transform 0.3s ease, box-shadow 0.3s ease;
+           margin: 20px 0;
+           border: none;
+           border-radius: 15px;
+           overflow: hidden;
+           box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+       }
+        .card:hover {
+           transform: translateY(-5px);
+           box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+       }
+        .card-img-top {
+           height: 200px;
+           object-fit: cover;
+       }
+        .social-links {
+           display: flex;
+           justify-content: center;
+           gap: 20px;
+           margin: 20px 0;
+       }
+        .social-links a {
+           color: #2c3e50;
+           font-size: 24px;
+           transition: color 0.3s ease;
+       }
+        .social-links a:hover {
+           color: #3498db;
+       }
+        footer {
+           background: #2c3e50;
+           color: #fff;
+           text-align: center;
+           padding: 2rem 0;
+           margin-top: 2rem;
+       }
+        .profile-img {
+           width: 200px;
+           height: 200px;
+           border-radius: 50%;
+           margin: 20px auto;
+           display: block;
+           object-fit: cover;
+           border: 5px solid #fff;
+           box-shadow: 0 0 15px rgba(0,0,0,0.2);
+       }
+        .skills {
+           display: flex;
+           flex-wrap: wrap;
+           gap: 10px;
+           justify-content: center;
+           margin: 20px 0;
+       }
+        .skill-tag {
+           background: #3498db;
+           color: white;
+           padding: 5px 15px;
+           border-radius: 20px;
+           font-size: 0.9em;
+       }
+        .contact-form {
+           max-width: 600px;
+           margin: 0 auto;
+           padding: 20px;
+           background: white;
+           border-radius: 15px;
+           box-shadow: 0 0 20px rgba(0,0,0,0.1);
+       }
+
+   </style>
+/head>
+body>
+   <header>
+       <nav>
+           <ul>
+               <li><a href="#" class="nav-link active" data-section="home">Trang chủ</a></li>
+               <li><a href="#" class="nav-link" data-section="blog">Blog</a></li>
+               <li><a href="#" class="nav-link" data-section="profile">Giới thiệu</a></li>
+               <li><a href="#" class="nav-link" data-section="contact">Liên hệ</a></li>
+           </ul>
+       </nav>
+   </header>
+    <section id="home" class="section">
+       <div class="container">
+           <h1 class="display-3 mb-4">Chia sẻ kiến thức, truyền cảm hứng lập trình!</h1>
+           <p class="lead mb-4">Lập trình Java và JavaScript</p>
+           <div class="social-links">
+               <a href="#"><i class="fab fa-github"></i></a>
+               <a href="#"><i class="fab fa-linkedin"></i></a>
+               <a href="#"><i class="fab fa-twitter"></i></a>
+           </div>
+       </div>
+   </section>
+   <section id="blog" class="section container">
+    <h2 class="text-center mb-5">Bài viết mới nhất</h2>
+    <div class="row">
+        <!-- Bài viết 1: Giới thiệu về Java -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://niithanoi.edu.vn/pic/News/gioi-thieu-ve-java-1.jpg" class="card-img-top" alt="Java">
+                <div class="card-body">
+                    <h3 class="card-title">Giới thiệu về Java</h3>
+                    <p class="card-text">Java là một ngôn ngữ lập trình mạnh mẽ và phổ biến. Bài viết này sẽ giới thiệu các khái niệm cơ bản của Java, từ cấu trúc cơ bản đến cách sử dụng trong các ứng dụng thực tế.</p>
+                    <a href="https://niithanoi.edu.vn/gioi-thieu-ve-java.html" class="btn btn-primary">Đọc thêm</a>
+                </div>
+            </div>
+        </div>
+        <!-- Bài viết 2: Các Khái Niệm Cơ Bản Trong Java -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://asia-1-fileserver-2.stringee.com/0/asia-1_1_CUNDPETQD59WATG/1695259704-OOP__trong_Java.png" class="card-img-top" alt="Khái niệm Java">
+                <div class="card-body">
+                    <h3 class="card-title">Các Khái Niệm Cơ Bản Trong Java</h3>
+                    <p class="card-text">Java có nhiều khái niệm cơ bản như lớp, đối tượng, và phương thức. Bài viết này sẽ giúp bạn hiểu rõ về các thành phần cơ bản của Java.</p>
+                    <a href="https://stringee.com/vi/blog/post/Khai-niem-OOP-trong-Java-va-Vi-du-phan-1" class="btn btn-primary">Đọc thêm</a>
+                </div>
+            </div>
+        </div>
+        <!-- Bài viết 3: Hướng Dẫn Cài Đặt Java Development Kit -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/j81COe6vShc/sddefault.jpg" class="card-img-top" alt="Cài đặt Java">
+                <div class="card-body">
+                    <h3 class="card-title">Hướng Dẫn Cài Đặt Java Development Kit (JDK)</h3>
+                    <p class="card-text">Để lập trình với Java, bạn cần cài đặt Java Development Kit (JDK). Bài viết này sẽ hướng dẫn bạn cách cài đặt và thiết lập môi trường Java.</p>
+                    <a href="https://vntalking.com/huong-dan-download-va-cai-dat-jdk-java-development-kit.html" class="btn btn-primary">Đọc thêm</a>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <div class="row">
+        <!-- Bài viết 4: Giới thiệu về JavaScript -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://mdigi.vn/wp-content/uploads/2023/06/javascript-la-gi.jpg" class="card-img-top" alt="JavaScript">
+                <div class="card-body">
+                    <h3 class="card-title">Giới thiệu về JavaScript</h3>
+                    <p class="card-text">JavaScript là ngôn ngữ lập trình phổ biến cho phát triển web. Bài viết này cung cấp cái nhìn tổng quan về JavaScript và vai trò của nó trong việc phát triển website.</p>
+                    <a href="https://mdigi.vn/javascript-la-gi/" class="btn btn-primary">Đọc thêm</a>
+                </div>
+            </div>
+        </div>
+        <!-- Bài viết 5: Cú Pháp JavaScript -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://vntalking.com/wp-content/uploads/2019/08/cu-phap-javascript-co-ban.png" class="card-img-top" alt="Cú pháp JavaScript">
+                <div class="card-body">
+                    <h3 class="card-title">Cú Pháp JavaScript</h3>
+                    <p class="card-text">Trong bài viết này, chúng ta sẽ tìm hiểu về cú pháp cơ bản trong JavaScript, từ khai báo biến đến cách sử dụng các toán tử và cấu trúc điều kiện.</p>
+                    <a href="https://vntalking.com/cu-phap-javascript-co-ban-nhung-buoc-di-dau-tien.html" class="btn btn-primary">Đọc thêm</a>
+                </div>
+            </div>
+        </div>
+        <!-- Bài viết 6: Các Khái Niệm Cơ Bản về JavaScript -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://vntalking.com/wp-content/uploads/2019/07/khai-niem-javascript-co-ban.png" class="card-img-top" alt="Khái niệm JavaScript">
+                <div class="card-body">
+                    <h3 class="card-title">Các Khái Niệm Cơ Bản về JavaScript</h3>
+                    <p class="card-text">Bài viết này sẽ giải thích các khái niệm cơ bản trong JavaScript, bao gồm biến, kiểu dữ liệu, hàm, và đối tượng trong JavaScript.</p>
+                    <a href="https://vntalking.com/khai-niem-javascript-co-ban.html" class="btn btn-primary">Đọc thêm</a>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <div class="row">
+        <!-- Bài viết 7: Xử lý sự kiện trong JavaScript -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://bizweb.dktcdn.net/100/278/960/files/su-kien-trong-javascript.jpg?v=1574154803586" class="card-img-top" alt="Xử lý sự kiện JavaScript">
+                <div class="card-body">
+                    <h3 class="card-title">Xử lý Sự Kiện trong JavaScript</h3>
+                    <p class="card-text">Xử lý sự kiện trong JavaScript là một phần quan trọng trong việc phát triển website. Bài viết này sẽ hướng dẫn bạn cách xử lý các sự kiện như click, hover, và keypress.</p>
+                    <a href="https://hanoiict.edu.vn/su-kien-trong-javascript" class="btn btn-primary">Đọc thêm</a>
+                </div>
+            </div>
+        </div>
+        <!-- Bài viết 8: Lập trình hướng đối tượng trong Java -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA4-i3YB9YQvQvZtTFYqXMOWKrdGXwtRx7qg&s" class="card-img-top" alt="Lập trình OOP trong Java">
+                <div class="card-body">
+                    <h3 class="card-title">Lập Trình Hướng Đối Tượng trong Java</h3>
+                    <p class="card-text">Java là một ngôn ngữ lập trình hướng đối tượng. Bài viết này sẽ giúp bạn hiểu về các khái niệm như lớp, đối tượng, kế thừa và đa hình trong Java.</p>
+                    <a href="https://thantrieu.com/course-category/java/" class="btn btn-primary">Đọc thêm</a>
+                </div>
+            </div>
+        </div>
+        <!-- Bài viết 9: Asynchronous JavaScript và Promises -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://phamvantu.com/wp-content/uploads/2022/06/1_l9rLxDVXdQP96xUQkQgJuQ.jpeg" class="card-img-top" alt="Asynchronous JavaScript">
+                <div class="card-body">
+                    <h3 class="card-title">Asynchronous JavaScript và Promises</h3>
+                    <p class="card-text">Asynchronous JavaScript giúp xử lý các tác vụ tốn thời gian mà không làm tắc nghẽn giao diện người dùng. Bài viết này giải thích cách sử dụng Promises trong JavaScript.</p>
+                    <a href="https://phamvantu.com/hieu-hon-ve-promise-sync-await" class="btn btn-primary">Đọc thêm</a>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <div class="row">
+        <!-- Bài viết 10: Sử dụng Java Collections Framework -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsx3UnGGf8E7F9qCMkdJXMGhCO_xOKxWMnjQ&s" class="card-img-top" alt="Java Collections">
+                <div class="card-body">
+                    <h3 class="card-title">Sử Dụng Java Collections Framework</h3>
+                    <p class="card-text">Java Collections Framework cung cấp các lớp dữ liệu mạnh mẽ giúp xử lý tập hợp đối tượng. Bài viết này sẽ giải thích cách sử dụng ArrayList, HashMap, và các lớp khác trong Java.</p>
+                    <a href="https://t3h.com.vn/tin-tuc/collections-trong-java" class="btn btn-primary">Đọc thêm</a>
+                </div>
+            </div>
+        </div>
+        <!-- Bài viết 11: JavaScript với AJAX -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://static.toidicode.com/upload/images/javascript/ajax-trong-javascript.png" class="card-img-top" alt="JavaScript AJAX">
+                <div class="card-body">
+                    <h3 class="card-title">JavaScript với AJAX</h3>
+                    <p class="card-text">AJAX cho phép tải dữ liệu từ máy chủ mà không cần tải lại trang. Bài viết này sẽ hướng dẫn bạn cách sử dụng AJAX với JavaScript để làm cho ứng dụng web của bạn mượt mà hơn.</p>
+                    <a href="https://toidicode.com/ajax-trong-javascript-192.html" class="btn btn-primary">Đọc thêm</a>
+                </div>
+            </div>
+        </div>
+        <!-- Bài viết 12: Phát Triển Web với Java và Spring Boot -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://ant.ncc.asia/wp-content/uploads/2024/05/java-1024x658.png" class="card-img-top" alt="Spring Boot">
+                <div class="card-body">
+                    <h3 class="card-title">Phát Triển Web với Java và Spring Boot</h3>
+                    <p class="card-text">Spring Boot là framework giúp phát triển ứng dụng web với Java. Bài viết này sẽ giới thiệu cách xây dựng ứng dụng web đơn giản với Spring Boot.</p>
+                    <a href="https://ant.ncc.asia/java-xay-dung-backend-bang-java/" class="btn btn-primary">Đọc thêm</a>
+                </div>
+            </div>
+        </div>
+    </div>
+ </section>
+ 
+    <section id="profile" class="section container text-center">
+       <h2 class="mb-4">Giới thiệu</h2>
+       <img src="https://cdn.codegym.vn/wp-content/uploads/2021/01/nganh-lap-trinh-la-gi-hoc-lap-trinh-vien-nen-bat-dau-tu-dau-2.jpg" alt="Profile" class="profile-img">
+       <h3 class="mt-4">Nguyễn Quang Trãi</h3>
+       <p class="lead">Lập trình viên Full Stack</p>
+       <div class="skills">
+           <span class="skill-tag">Java</span>
+           <span class="skill-tag">JavaScript</span>
+           <span class="skill-tag">HTML/CSS</span>
+           <span class="skill-tag">Spring Boot</span>
+           <span class="skill-tag">React</span>
+       </div>
+       <p class="mt-4">
+           Tôi là một lập trình viên đam mê công nghệ với hơn 2 năm kinh nghiệm trong phát triển web. 
+           Tôi thích học hỏi những công nghệ mới và chia sẻ kiến thức với cộng đồng.
+       </p>
+   </section>
+    <section id="contact" class="section container">
+       <h2 class="text-center mb-5">Liên hệ</h2>
+       <div class="contact-form">
+           <form>
+               <div class="mb-3">
+                   <label for="name" class="form-label">Họ tên</label>
+                   <input type="text" class="form-control" id="name" required>
+               </div>
+               <div class="mb-3">
+                   <label for="email" class="form-label">Email</label>
+                   <input type="email" class="form-control" id="email" required>
+               </div>
+               <div class="mb-3">
+                   <label for="message" class="form-label">Tin nhắn</label>
+                   <textarea class="form-control" id="message" rows="5" required></textarea>
+               </div>
+               <button type="submit" class="btn btn-primary w-100">Gửi tin nhắn</button>
+           </form>
+       </div>
+       <div class="text-center mt-5">
+           <p>Email: <a href="http://nguyenquangtrai.100203@gmail.com" target="_blank">nguyenquangtrai.100203@gmail.com</a></p>
+           <p>Github: <a href="https://github.com/NguyenQuangTrai" target="_blank">https://github.com/NguyenQuangTrai</a></p>
+       </div>
+   </section>
+    <footer>
+       <div class="container">
+           <div class="social-links">
+               <a href="#"><i class="fab fa-github"></i></a>
+               <a href="#"><i class="fab fa-linkedin"></i></a>
+               <a href="#"><i class="fab fa-twitter"></i></a>
+           </div>
+           <p>&copy; Được tạo bởi Nguyễn Quang Trãi.</p>
+       </div>
+   </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hiển thị section Home mặc định
+            document.getElementById('home').classList.add('active');
+            
+            // Xử lý click navigation
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.section');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+    
+                    // Xóa lớp 'active' khỏi tất cả các phần tử
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    sections.forEach(section => section.classList.remove('active'));
+    
+                    // Thêm lớp 'active' vào phần tử và section tương ứng
+                    this.classList.add('active');
+                    const sectionId = this.getAttribute('data-section');
+                    document.getElementById(sectionId).classList.add('active');
+                });
+            });
+        });
+    </script>
+    
+</body>
+</html>
