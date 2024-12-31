@@ -1,161 +1,23 @@
 <!DOCTYPE html>
-html lang="vi">
-head>
+<html lang="vi">
+<head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Blog cá nhân - Lập trình Java</title>
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-   <style>
-       body {
-           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-           line-height: 1.6;
-           color: #333;
-           background-color: #f8f9fa;
-       }
-        header {
-           background: #2c3e50;
-           color: #fff;
-           padding: 1rem 0;
-           position: fixed;
-           width: 100%;
-           top: 0;
-           z-index: 1000;
-           box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-       }
-        nav ul {
-           list-style: none;
-           padding: 0;
-           display: flex;
-           justify-content: center;
-           margin: 0;
-       }
-        nav ul li {
-           margin: 0 20px;
-       }
-        .nav-link {
-           color: #fff !important;
-           text-decoration: none;
-           font-weight: 500;
-           position: relative;
-           padding: 5px 0;
-           font-size: 1.1em;
-       }
-        .nav-link::after {
-           content: '';
-           position: absolute;
-           width: 100%;
-           height: 2px;
-           bottom: 0;
-           left: 0;
-           background-color: #3498db;
-           transform: scaleX(0);
-           transition: transform 0.3s ease-in-out;
-       }
-        .nav-link:hover::after,
-       .nav-link.active::after {
-           transform: scaleX(1);
-       }
-        .section {
-           display: none;
-           opacity: 0;
-           transition: opacity 0.5s ease-in-out;
-           padding-top: 80px;
-       }
-        .section.active {
-           display: block;
-           opacity: 1;
-       }
-        #home {
-           background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-                       url('https://static.topcv.vn/cms/front%20end%20developer%2000612f8b56c7d35.jpg') no-repeat center center;
-           background-size: cover;
-           color: white;
-           min-height: 100vh;
-           display: flex;
-           align-items: center;
-           text-align: center;
-       }
-        .card {
-           transition: transform 0.3s ease, box-shadow 0.3s ease;
-           margin: 20px 0;
-           border: none;
-           border-radius: 15px;
-           overflow: hidden;
-           box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-       }
-        .card:hover {
-           transform: translateY(-5px);
-           box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-       }
-        .card-img-top {
-           height: 200px;
-           object-fit: cover;
-       }
-        .social-links {
-           display: flex;
-           justify-content: center;
-           gap: 20px;
-           margin: 20px 0;
-       }
-        .social-links a {
-           color: #2c3e50;
-           font-size: 24px;
-           transition: color 0.3s ease;
-       }
-        .social-links a:hover {
-           color: #3498db;
-       }
-        footer {
-           background: #2c3e50;
-           color: #fff;
-           text-align: center;
-           padding: 2rem 0;
-           margin-top: 2rem;
-       }
-        .profile-img {
-           width: 200px;
-           height: 200px;
-           border-radius: 50%;
-           margin: 20px auto;
-           display: block;
-           object-fit: cover;
-           border: 5px solid #fff;
-           box-shadow: 0 0 15px rgba(0,0,0,0.2);
-       }
-        .skills {
-           display: flex;
-           flex-wrap: wrap;
-           gap: 10px;
-           justify-content: center;
-           margin: 20px 0;
-       }
-        .skill-tag {
-           background: #3498db;
-           color: white;
-           padding: 5px 15px;
-           border-radius: 20px;
-           font-size: 0.9em;
-       }
-        .contact-form {
-           max-width: 600px;
-           margin: 0 auto;
-           padding: 20px;
-           background: white;
-           border-radius: 15px;
-           box-shadow: 0 0 20px rgba(0,0,0,0.1);
-       }
-
-   </style>
-/head>
-body>
+   <link rel="stylesheet" href="styles/style.css">
+   
+</head>
+<body>
    <header>
        <nav>
            <ul>
                <li><a href="#" class="nav-link active" data-section="home">Trang chủ</a></li>
-               <li><a href="#" class="nav-link" data-section="blog">Blog</a></li>
+               <li><a href="#" class="nav-link" data-section="blog">Bài viết</a></li>
                <li><a href="#" class="nav-link" data-section="profile">Giới thiệu</a></li>
                <li><a href="#" class="nav-link" data-section="contact">Liên hệ</a></li>
+               <li><a href="#" class="nav-link" data-section="success">Thành tựu</a></li>
            </ul>
        </nav>
    </header>
@@ -315,13 +177,12 @@ body>
             </div>
         </div>
     </div>
- </section>
- 
+    </section>
     <section id="profile" class="section container text-center">
        <h2 class="mb-4">Giới thiệu</h2>
        <img src="https://cdn.codegym.vn/wp-content/uploads/2021/01/nganh-lap-trinh-la-gi-hoc-lap-trinh-vien-nen-bat-dau-tu-dau-2.jpg" alt="Profile" class="profile-img">
        <h3 class="mt-4">Nguyễn Quang Trãi</h3>
-       <p class="lead">Lập trình viên Full Stack</p>
+       <p class="lead">Lập trình viên</p>
        <div class="skills">
            <span class="skill-tag">Java</span>
            <span class="skill-tag">JavaScript</span>
@@ -333,6 +194,26 @@ body>
            Tôi là một lập trình viên đam mê công nghệ với hơn 2 năm kinh nghiệm trong phát triển web. 
            Tôi thích học hỏi những công nghệ mới và chia sẻ kiến thức với cộng đồng.
        </p>
+   </section>
+   <section id="success" class="section container">
+        <h2 class="text-center mb-5">Thành tựu đạt được trong quá trình học tập</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="images/javasc1.png" class="images" alt="Java Collections">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="images/javasc2.png" class="images" alt="Java Collections">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="images/netbasic.png" class="images" alt="Java Collections">
+                </div>
+            </div>
+        </div>
    </section>
     <section id="contact" class="section container">
        <h2 class="text-center mb-5">Liên hệ</h2>
